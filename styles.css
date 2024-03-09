@@ -14,14 +14,6 @@ body {
   transform: translateY(-50%);
 }
 
-#spikes {
-  width: 100%;
-  height: 20px;
-  background-color: #c62828;
-  position: absolute;
-  bottom: 0;
-}
-
 #map {
   position: relative;
   width: 100%;
@@ -30,6 +22,14 @@ body {
 
 .spike {
   width: 20px;
+  height: 20px;
+  background-color: #c62828;
+  position: absolute;
+  bottom: 0;
+}
+
+#spikes {
+  width: 100%;
   height: 20px;
   background-color: #c62828;
   position: absolute;
