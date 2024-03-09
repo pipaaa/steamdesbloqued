@@ -1,5 +1,5 @@
 const flacy = document.getElementById('flacy');
-const spikes = document.getElementById('spikes');
+const map = document.getElementById('map');
 
 document.addEventListener('keydown', function(event) {
   const key = event.key;
@@ -21,10 +21,13 @@ document.addEventListener('keydown', function(event) {
 
   // Check for collision with spikes
   const flacyRect = flacy.getBoundingClientRect();
-  const spikesRect = spikes.getBoundingClientRect();
+  const spikes = document.querySelectorAll('.spike');
 
-  if (flacyRect.right > spikesRect.left && flacyRect.left < spikesRect.right && flacyRect.bottom > spikesRect.top) {
-    alert('Game Over! Flacy touched the spikes.');
-    location.reload();
-  }
+  spikes.forEach(spike => {
+    const spikeRect = spike.getBoundingClientRect();
+    if (flacyRect.right > spikeRect.left && flacyRect.left < spikeRect.right && flacyRect.bottom > spikeRect.top) {
+      alert('Game Over! Flacy touched the spikes.');
+      location.reload();
+    }
+  });
 });
